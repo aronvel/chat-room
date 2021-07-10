@@ -15,7 +15,7 @@ const {
   getUsersInRoom,
 } = require("./util/users");
 
-const port = process.env.PORT | 3000;
+const port = process.env.PORT || 3000;
 const publicDirectoryPath = path.join(__dirname, "../public");
 
 app.use(express.static(publicDirectoryPath));
@@ -84,11 +84,6 @@ io.on("connection", (socket) => {
       );
     }
   });
-  //   socket.emit("countUpdated", count);
-  //   socket.on("increment", () => {
-  //     count++;
-  //     socket.emit("countUpdated", count);
-  //   });
 });
 
 server.listen(port, () => {
