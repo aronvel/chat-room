@@ -33,14 +33,14 @@ io.on("connection", (socket) => {
       room: user.room,
       users: getUsersInRoom(user.room),
     });
-    socket.emit("message", generateMessage("Admin", "Welcome!"));
+    socket.emit("message", generateMessage("Admin", "Vaanga pangu!"));
     socket.broadcast
       .to(user.room)
       .emit(
         "message",
         generateMessage(
           "Admin",
-          `Boss ${user.username} virundaali vandu irukaanga`
+          `${user.username} Vandutan! Vandutan!! Vandutan!!!`
         )
       );
     callback();
@@ -79,7 +79,7 @@ io.on("connection", (socket) => {
         "message",
         generateMessage(
           "Admin",
-          `kootatula pachha sattai(${user.username}) escape aavuraan`
+          `kootatula pachha sattai (${user.username}) escape aavuraan`
         )
       );
     }
